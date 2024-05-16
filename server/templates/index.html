@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space agency</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="menu ">
+    <div class="menu__container container">
+        <input type="checkbox" class="menu__toggler" checked>
+        <button class="menu__burger-btn">
+            <div class="menu__center-line"></div>
+        </button>
+        <img src="{% static 'img/logo.png' %}" alt="" class="menu__logo">
+        <div class="menu__items">
+            <a href="" class="menu__item">ПРЕИМУЩЕСТВА</a>
+            <a href="" class="menu__item">ФОТОГРАФИИ</a>
+        </div>
+        <button class="menu__login btn btn-danger"><a href="">ВХОД</a></button>
+    </div>
+</nav>
+<main class="main">
+    <section class="advantages">
+        <div class="advantages__container container">
+            <div class="advantages__content">
+                <div class="adv_content__header">
+                    <h1 class="adv_content__title">Космическое агенство</h1>
+                    <p class="adv_content__desc">Национальное управление по аэронавтике и исследованию космического
+                        пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся
+                        непосредственно президенту США.</p>
+                </div>
+                <div class="adv_content__left">
+                    <div class="adv_content__item">
+                        <img src="{% static 'img/spaceshuttle.png'%}" alt="">
+                        <h3>Спейс шаттлы —пилотируемые корабли</h3>
+                    </div>
+                    <div class="adv_content__item">
+                        <img src="{% static 'img/telescope.png'%}" alt="">
+                        <h3>Лучшее телескопическое оборудование</h3>
+                    </div>
+                    <div class="adv_content__item">
+                        <img src="{% static 'img/moon.png'%}" alt="">
+                        <h3>Целимся на Луну и Марс</h3>
+                    </div>
+                    <div class="adv_content__item">
+                        <img src="{% static 'img/medal.png'%}" alt="">
+                        <h3>Золотая медаль по научным исследованиям</h3>
+                    </div>
+                </div>
+                <div class="adv_content__right">
+                    <img src="{% static 'img/milky_way.png' %}" alt="" class="adv_content__right-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="photos">
+        <div class="photos__container container">
+            <h2 class="photos__title">Фотографии</h2>
+            <div class="photos__slider-big">
+                {% for pic in picture_list %}
+                <div class="photos__slider-big-item"><img src="{{ pic.image.url }}" alt=""></div>
+                {% endfor %}
+            </div>
+            <div class="photos__slider">
+                {% for pic in picture_list %}
+                <div class="photos__slider-item"><img src="{{ pic.image.url }}" alt=""></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
