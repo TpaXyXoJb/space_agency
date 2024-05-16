@@ -5,7 +5,7 @@
 .DS_Store
 .idea
 .vscode
-*.log
+*.
 *.pyc
 **/__pycache__/
 *.sql
